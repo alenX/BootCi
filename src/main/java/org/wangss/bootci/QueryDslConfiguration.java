@@ -7,10 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.EntityManager;
 
-@Configuration
+//@Configuration
 public class QueryDslConfiguration {
-    @Bean
-    public JPAQueryFactory jpaQueryFactory(EntityManager entityManager){
-        return new JPAQueryFactory(new HQLTemplates(),entityManager);
-    }
+
+
 }
