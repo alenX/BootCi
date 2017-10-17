@@ -14,3 +14,7 @@ spring:
   redis:
     host: localhost
     database: 0
+
+app:
+  jwt:
+    token: 1
