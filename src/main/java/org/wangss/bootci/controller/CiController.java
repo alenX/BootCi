@@ -32,7 +32,7 @@ public class CiController {
     public Ci findCiById(@PathVariable(value = "id") Long id,HttpServletRequest request){
         String remoteIp = getRemoteHost(request);
         if (redisTemplate.opsForValue().get(remoteIp+"GET")==null){
-            redisTemplate.opsForValue().set(remoteIp+"GET",1,10, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(remoteIp+"GET",1,10, TimeUnit.MINUTES);
         }else{
             redisTemplate.opsForValue().set(remoteIp+"GET",Integer.valueOf(redisTemplate.opsForValue().get(remoteIp+"GET").toString())+1,10, TimeUnit.SECONDS);
         }
