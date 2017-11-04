@@ -6,14 +6,17 @@ import org.springframework.stereotype.Service;
 import org.wangss.bootci.domain.Ci;
 import org.wangss.bootci.domain.QCi;
 
+/**
+ * @author wangss
+ */
 @Service
-public class CiService implements ICiService{
+public class CiService implements ICiService {
 
-    @Autowired
-    private JPAQueryFactory jpa;
+  @Autowired
+  private JPAQueryFactory jpa;
 
-    @Override
-    public Ci findCiById(Long id) {
-        return jpa.select(QCi.ci).from(QCi.ci).where(QCi.ci.id.eq(id)).fetchOne();
-    }
+  @Override
+  public Ci findCiById(Long id) {
+    return jpa.select(QCi.ci).from(QCi.ci).where(QCi.ci.id.eq(id)).fetchOne();
+  }
 }

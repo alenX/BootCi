@@ -8,11 +8,15 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.EntityManager;
 
+/**
+ * @author wangss
+ */
 @Configuration
 @EnableJpaAuditing
 public class QueryDslConfiguration {
-    @Bean
-    public JPAQueryFactory jpaQueryFactory(EntityManager entityManager) {
-        return new JPAQueryFactory(new HQLTemplates(), entityManager);
-    }
+
+  @Bean
+  public JPAQueryFactory jpaQueryFactory(EntityManager entityManager) {
+    return new JPAQueryFactory(new HQLTemplates(), entityManager);
+  }
 }
